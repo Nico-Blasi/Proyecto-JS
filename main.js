@@ -60,16 +60,16 @@ function pedirProducto() {
             return clienteSale()
         }
 
-        let pagar = producto.find(prod => prod.id == producto).precio * cantidad;
+        let pagar = producto.find(prod => prod.id == product).precio * cantidad;
 
-        let productoSelect = producto.find(prod => prod.id == producto).nombre;
+        let productoSelect = producto.find(prod => prod.id == product).nombre;
 
         if (productosComprados.some(prod => prod.nombre == productoSelect)) {
-            productosComprados.find(prod => prod.id == producto).qty += cantidad
+            productosComprados.find(prod => prod.id == product).qty += cantidad
 
         } else {
-            productosComprados.push(producto.find(prod => prod.id == producto))
-            productosComprados.find(prod => prod.id == producto).qty = cantidad
+            productosComprados.push(producto.find(prod => prod.id == product))
+            productosComprados.find(prod => prod.id == product).qty = cantidad
         }
 
         total += pagar;
