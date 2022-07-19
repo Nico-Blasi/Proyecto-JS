@@ -1,0 +1,38 @@
+[
+    {
+      "precio": 39000,
+      "id": 1,
+      "title": "Procesador",
+      "thumbnailUrl": "https://picsum.photos/id/0/600"
+    },
+    {
+      "precio": 9000,
+      "id": 2,
+      "title": "RAM",
+      "thumbnailUrl": "https://picsum.photos/id/10/600"
+    },
+    {
+      "precio": 120000,
+      "id": 3,
+      "title": "Placa de video",
+      "thumbnailUrl": "https://picsum.photos/id/20/600"
+    },
+    {
+      "precio": 27000,
+      "id": 4,
+      "title": "Placa madre",
+      "thumbnailUrl": "https://picsum.photos/id/30/600"
+    },
+    {
+      "precio": 28000,
+      "id": 5,
+      "title": "Monitor",
+      "thumbnailUrl": "https://picsum.photos/id/40/600"
+    },
+    {
+      "precio": 8700,
+      "id": 6,
+      "title": "Gabinete",
+      "thumbnailUrl": "https://picsum.photos/id/50/600"
+    }
+  ]

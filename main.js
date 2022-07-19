@@ -15,7 +15,7 @@ menu.onclick = function(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-let nombre = prompt("¿Cómo te llamas?");
+/* let nombre = prompt("¿Cómo te llamas?");
 
 alert(`Hola ${nombre}, bienvenido a ZevA Technology`);
 
@@ -103,4 +103,5 @@ function pagarCuenta() {
     } while (pagoCuenta < total);
 }
 
-pedirProducto()
+pedirProducto() */
+
