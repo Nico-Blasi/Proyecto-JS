@@ -1,10 +1,18 @@
 const cards = document.getElementById ('cards')
+const items = document.getElementById ('items')
+const footer = document.getElementById ('footer')
 const templateCard = document.getElementById ('template-card').content
+const templateFooter = document.getElementById ('template-footer').content
+const templateCarrito = document.getElementById ('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
 document.addEventListener ('DOMContentLoaded', () => {
     fetchData()
+    if (localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        pintarCarrito()
+    }
 })
 cards.addEventListener ('click', e => {
     addCarrito(e)
@@ -43,7 +51,7 @@ const addCarrito = e => {
 }
 
 const setCarrito = objeto => {
-    console.log (objeto)
+    // console.log (objeto)
     const producto = {
         id: objeto.querySelector ('.btn-dark').dataset.id,
         title: objeto.querySelector ('.titulo').textContent,
@@ -56,6 +64,29 @@ const setCarrito = objeto => {
     }
 
     carrito[producto.id] = {...producto}
+    pintarCarrito()
 
-    console.log (carrito)
+    // console.log (carrito)
 }
+
+const pintarCarrito = () => {
+    items.innerHTML = ''
+    Object.values(carrito).forEach(producto => {
+        templateCarrito.querySelector('th').textContent = producto.id
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.title
+        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
+        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+        templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio
+        const clone = templateCarrito.cloneNode(true)
+        fragment.appendChild(clone)
+    })
+    items.appendChild(fragment)
+
+    // pintarFooter()
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+// const pintarFooter = () => {
+    
+// }
