@@ -90,3 +90,10 @@ const pintarCarrito = () => {
 // const pintarFooter = () => {
     
 // }
+
+//seccion para libreria de carrusel
+$('.carrusel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
+});
